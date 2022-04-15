@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "62591049f8af4f66561e6c9e"
+  },
+  "nome": "Tiago Costa",
+  "idade": 29,
+  "salario": "90000",
+  "_class": "br.com.desafioapimongo.desafioapi.model.Funcionario"
+},{
+  "_id": {
+    "$oid": "62591067f8af4f66561e6c9f"
+  },
+  "nome": "José Pereira",
+  "idade": 32,
+  "salario": "3000",
+  "chefe": {
+    "$ref": "funcionario",
+    "$id": {
+      "$oid": "62591049f8af4f66561e6c9e"
+    }
+  },
+  "_class": "br.com.desafioapimongo.desafioapi.model.Funcionario"
+},{
+  "_id": {
+    "$oid": "62591078f8af4f66561e6ca0"
+  },
+  "nome": "Julio Cezar",
+  "idade": 60,
+  "salario": "3000",
+  "chefe": {
+    "$ref": "funcionario",
+    "$id": {
+      "$oid": "62591049f8af4f66561e6c9e"
+    }
+  },
+  "_class": "br.com.desafioapimongo.desafioapi.model.Funcionario"
+}]
