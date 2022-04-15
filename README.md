@@ -4,7 +4,7 @@
 
 ## Requisitos
   * API deve conter os endpoints Get, Post, Put e Delete;
-  * Testes unitários -> model, service e controller;
+  * Testes unitário;
 
 ## Stack utilizada
   * Java 8

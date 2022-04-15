@@ -27,7 +27,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     }
 
     @Override
-    public Funcionario criar(Funcionario funcionario) {
+    public Funcionario criarFuncionario(Funcionario funcionario) {
 
         Funcionario chefe = this.funcionarioRepository
                 .findById(funcionario.getChefe().getCodigo())
@@ -36,5 +36,37 @@ public class FuncionarioServiceImpl implements FuncionarioService {
         funcionario.setChefe(chefe);
 
         return this.funcionarioRepository.save(funcionario);
+    }
+
+    public Funcionario criarChefe(Funcionario funcionario) {
+
+            return this.funcionarioRepository.save(funcionario);
+
+    }
+
+    @Override
+    public void deletarPorCodigo(String codigo) {
+
+        if(funcionarioRepository.existsById(codigo)){
+
+            funcionarioRepository.deleteById(codigo);
+
+        }
+
+    }
+
+    @Override
+    public Funcionario atualizarPorId(Funcionario funcionario, String codigo) {
+
+       Funcionario funcionarioAtualizado = this.funcionarioRepository
+                .findById(codigo)
+                .orElseThrow(() -> new IllegalArgumentException("Funcionário não existe."));
+
+       funcionarioAtualizado.setNome(funcionario.getNome());
+       funcionarioAtualizado.setIdade(funcionario.getIdade());
+       funcionarioAtualizado.setSalario(funcionario.getSalario());
+
+       return funcionarioRepository.save(funcionarioAtualizado);
+
     }
 }

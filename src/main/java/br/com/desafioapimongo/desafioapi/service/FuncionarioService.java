@@ -10,5 +10,11 @@ public interface FuncionarioService {
 
     public Funcionario obterPorCodigo(String codigo);
 
-    public Funcionario criar (Funcionario funcionario);
+    public Funcionario criarChefe (Funcionario funcionario);
+
+    public Funcionario criarFuncionario (Funcionario funcionario);
+
+    public void deletarPorCodigo (String codigo);
+
+    public Funcionario atualizarPorId(Funcionario funcionario, String codigo);
 }
